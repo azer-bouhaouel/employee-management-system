@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/api/employee")
 public class EmployeeController {
@@ -30,7 +29,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/getsalaries")
-    List<Employee> getEmployeeByEmail(@RequestParam double minSalary, @RequestParam double maxSalary){
+    List<Employee> getSalariesBetween(@RequestParam double minSalary, @RequestParam double maxSalary){
         return employeeService.getSalaryBetween(minSalary,maxSalary );
     }
 
